@@ -41,13 +41,16 @@ Data source: [Chicago Taxi Trips 2024](https://data.cityofchicago.org/Transporta
 
 ### requirements.txt
 ```
-pandas==2.0.3
-numpy==1.24.3
-matplotlib==3.7.2
-seaborn==0.12.2
-plotly==5.15.0
-scikit-learn==1.3.0
-xgboost==1.7.6
+numpy>=1.24.0
+pandas>=2.1.0
+scikit-learn>=1.2.2
+xgboost>=1.7.6
+matplotlib>=3.7.1
+seaborn>=0.12.2
+plotly>=5.16.0
+scipy>=1.11.0
+joblib>=1.3.0
+
 ```
 
 ## Usage
@@ -82,16 +85,9 @@ xgboost==1.7.6
 
 ## Results
 
-- Baseline R²: ~0.75 (Linear Regression on miles/seconds).
-- Tuned XGBoost: ~0.92 R² (CV score).
-- Key features: Trip Miles (corr=0.80), Avg Speed (MI=0.59), Haversine Dist.
-- Outliers handled: Reduced skew in fares, improved stability.
+- Baseline R²: ~0.28 (Linear Regression on miles/seconds).
+- Tuned XGBoost: ~0.65 R² .
 
-| Model | Train R² | Test R² | RMSE |
-|-------|----------|---------|------|
-| Linear | 0.78 | 0.77 | 4.2 |
-| Random Forest | 0.95 | 0.91 | 2.8 |
-| XGBoost | 0.96 | 0.92 | 2.5 |
 
 ## Contributing
 
@@ -112,9 +108,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**GitHub Repo Description (349 chars):**
-
-Predict Chicago taxi fares with 2024 data! Clean & engineer features (Haversine dist, airport flags, cyclical time). Train ML models (XGBoost: R²=0.92) via pipelines. Handle outliers, EDA visuals. Jupyter notebooks for end-to-end workflow. Boost accuracy with tuning & CV. Open-source ML project for urban transport prediction. #TaxiFare #MachineLearning #DataScience (349 chars incl. spaces)# Taxi Fare Prediction
 
 ## Overview
 This project predicts Chicago taxi fares using 2024 trip data from the Chicago Data Portal. It includes data cleaning, exploratory analysis, feature engineering (e.g., Haversine distance, cyclical time encoding, airport trip flags), outlier handling, and ML modeling with scikit-learn and XGBoost. Goal: Maximize R² score through pipelines, hyperparameter tuning, and cross-validation. Notebooks demonstrate preprocessing and regression models like LinearRegression, RandomForestRegressor, and XGBRegressor.
@@ -176,5 +169,4 @@ MIT—free to use/modify.
 
 ---
 
-**GitHub Repo Description (349 chars):**  
-ML project predicting Chicago taxi fares from 2024 trips data. Clean & engineer features (Haversine dist, time cycles, airport flags), handle outliers, build pipelines w/ sklearn/XGBoost. Maximize R² via tuning/CV. Notebooks: data viz/cleaning & modeling. Baseline R² 0.65→0.9+. Open-source for urban transport analytics. (278 chars—expand as needed)
+
